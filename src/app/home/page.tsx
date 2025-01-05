@@ -4,7 +4,7 @@ import Hero from '../components/hero'
 
 const HomePage = () => {
   return (
-    <div>
+    <div className='relative px-[64px]'>
       <Navbar />
       <Hero />
     </div>
