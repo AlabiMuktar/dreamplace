@@ -1,8 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import HeroImg from "/public/Rectangle 2.png";
-import { CiLocationOn } from "react-icons/ci";
-import { LuCalendarDays } from "react-icons/lu";
+import User from "/public/user-square 1.svg"
+import Calendar from '/public/calendar 1.svg'
+import Location from '/public/location 1.svg'
 
 const Hero = () => {
   return (
@@ -26,14 +27,41 @@ const Hero = () => {
         <div className="absolute w-[100%] flex justify-center bottom-[-7%]">
           <div className="w-[1030px] flex justify-center items-center h-[64px] bg-[#FFFFFF] shadow-custom-searchbar rounded-[8px]">
             <form className="flex items-center gap-x-[10px]">
-              <input className="bg-[#F2F2F2] max-w-[260px] px-[12px] pt-[11px] pb-[12px] rounded-[4px] focus:outline-none placeholder:text-[]" placeholder="Where are you going?" />
+              <div className="flex items-end gap-[10px] bg-[#F2F2F2] w-[260px] px-[12px] pt-[11px] pb-[12px] rounded-[4px]">
+                <Image src={Location} alt="location" />
+                <input
+                  className="bg-transparent focus:outline-none placeholder:text-[]"
+                  placeholder="Where are you going?"
+                />
+              </div>
 
-              <input className="bg-[#F2F2F2] max-w-[170px] px-[12px] pt-[11px] pb-[12px] rounded-[4px] focus:outline-none" placeholder="Check in date" />
+              <div className="flex items-end gap-[10px] bg-[#F2F2F2] w-[170px] px-[12px] pt-[11px] pb-[12px] rounded-[4px]">
+              <Image src={Calendar} alt="calendar" />
+                <input
+                  className="bg-transparent focus:outline-none"
+                  placeholder="Check in date"
+                />
+              </div>
 
-              <input className="bg-[#F2F2F2] max-w-[170px] px-[12px] pt-[11px] pb-[12px] rounded-[4px] focus:outline-none" placeholder="Check out date" />
-              <input className="bg-[#F2F2F2] max-w-[210px] px-[12px] pt-[11px] pb-[12px] rounded-[4px] focus:outline-none" placeholder="Guests" />
+              <div className="flex items-end gap-[10px] bg-[#F2F2F2] w-[170px] px-[12px] pt-[11px] pb-[12px] rounded-[4px]">
+              <Image src={Calendar} alt="calendar" />
+                <input
+                  className="bg-transparent focus:outline-none"
+                  placeholder="Check out date"
+                />
+              </div>
 
-              <button className="bg-[#2F80ED] w-[148px] py-[12px] px-[18px] rounded-[4px] text-[#FFFFFF]">Search</button>
+              <div className="flex items-end gap-x-[10px] bg-[#F2F2F2] w-[210px] px-[12px] pt-[11px] pb-[12px] rounded-[4px]">
+              <Image src={User} alt="calendar" />
+                <input
+                  className="bg-transparent focus:outline-none"
+                  placeholder="Guests"
+                />
+              </div>
+
+              <button className="bg-[#2F80ED] w-[148px] py-[12px] px-[18px] rounded-[4px] text-[#FFFFFF]">
+                Search
+              </button>
             </form>
           </div>
         </div>
