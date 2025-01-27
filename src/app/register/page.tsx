@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import AuthNavbar from "../components/authNavbar";
 import google from "/public/image 4.svg";
-import facebook from "/public/facebook 1.svg";
 
 const Register = () => {
   return (
@@ -33,10 +32,6 @@ const Register = () => {
           <button className="flex items-center justify-center gap-x-[10px] px-[18px] py-[12px] rounded-[6px] text-sm border border-[#E0E0E0]">
             <Image src={google} width={20} height={20} alt="google logo" />
             Continue with Google
-          </button>
-          <button className="flex items-center justify-center gap-x-[10px] px-[18px] py-[12px] rounded-[6px] text-sm text-[#FFFFFF] bg-[#475993]">
-            <Image src={facebook} width={20} height={20} alt="google logo" />
-            Continue with Facebook
           </button>
           <p className="text-sm text-center mt-[40px]">
             Already have an account?{" "}

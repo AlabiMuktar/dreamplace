@@ -48,3 +48,31 @@ export const tripInspiration = [
       "Pandemic ist still intact and will be here for a longer time. Here's where your next destination...",
   },
 ];
+
+
+export const hotelLists = [
+  {
+    id: 1,
+    img: "/Lakeside.png",
+    hotel: "Lakeside Motel Warefront",
+    properties: "2246 properties",
+  },
+  {
+    id: 2,
+    img: "/Reece Graham.png",
+    hotel: "Reece Graham resort",
+    properties: "1278 properties",
+  },
+  {
+    id: 3,
+    img: "/Fireside dinners.png",
+    hotel: "Fireside Dinners",
+    properties: "480 properties",
+  },
+  {
+    id: 4,
+    img: "/Oculous.png",
+    hotel: "Oculous Inn Stay",
+    properties: "320 properties",
+  },
+]

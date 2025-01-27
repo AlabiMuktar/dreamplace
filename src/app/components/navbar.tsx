@@ -18,6 +18,7 @@ const Navbar = () => {
         <li className="cursor-pointer">Activities</li>
         <li className="cursor-pointer">About</li>
         <li className="cursor-pointer">Contact</li>
+        <li className="cursor-pointer">List your property</li>
       </ul>
       <div className="flex space-x-4">
         <Link href={"/register"}>
