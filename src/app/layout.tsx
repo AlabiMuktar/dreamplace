@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
+import GoogleProvider from "./components/GoogleProvider";
+import ReduxProvider from "./state/storeProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ReduxProvider>
+          <GoogleProvider>{children}</GoogleProvider>
+        </ReduxProvider>
+        <ToastContainer />
+      </body>
     </html>
   );
 }

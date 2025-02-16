@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import HeroImg from "/public/Rectangle 2.png";
-import User from "/public/user-square 1.svg"
-import Calendar from '/public/calendar 1.svg'
-import Location from '/public/location 1.svg'
+import User from "/public/user-square 1.svg";
+import Calendar from "/public/calendar 1.svg";
+import Location from "/public/location 1.svg";
 
 const Hero = () => {
   return (
@@ -36,7 +36,7 @@ const Hero = () => {
               </div>
 
               <div className="flex items-end gap-[10px] bg-[#F2F2F2] w-[170px] px-[12px] pt-[11px] pb-[12px] rounded-[4px]">
-              <Image src={Calendar} alt="calendar" />
+                <Image src={Calendar} alt="calendar" />
                 <input
                   className="bg-transparent focus:outline-none"
                   placeholder="Check in date"
@@ -44,7 +44,7 @@ const Hero = () => {
               </div>
 
               <div className="flex items-end gap-[10px] bg-[#F2F2F2] w-[170px] px-[12px] pt-[11px] pb-[12px] rounded-[4px]">
-              <Image src={Calendar} alt="calendar" />
+                <Image src={Calendar} alt="calendar" />
                 <input
                   className="bg-transparent focus:outline-none"
                   placeholder="Check out date"
@@ -52,14 +52,19 @@ const Hero = () => {
               </div>
 
               <div className="flex items-end gap-x-[10px] bg-[#F2F2F2] w-[210px] px-[12px] pt-[11px] pb-[12px] rounded-[4px]">
-              <Image src={User} alt="calendar" />
+                <Image src={User} alt="calendar" />
                 <input
                   className="bg-transparent focus:outline-none"
                   placeholder="Guests"
                 />
               </div>
 
-              <button className="bg-[#2F80ED] w-[148px] py-[12px] px-[18px] rounded-[4px] text-[#FFFFFF]">
+              <button
+                className="bg-[#2F80ED] w-[148px] py-[12px] px-[18px] rounded-[4px] text-[#FFFFFF]
+                  transition-transform duration-200 ease-in-out 
+                  hover:bg-[#2575D1] hover:scale-105 hover:shadow-lg 
+                  active:bg-[#1E60BF]"
+              >
                 Search
               </button>
             </form>

@@ -9,7 +9,7 @@ const AuthNavbar = () => {
       <Link href={"/"}>
         <div className="flex items-center space-x-[4px]">
           <Image src={dreamlogo} width={24} height={24} alt="dreamplace logo" />
-          <p className="text-lg text-[#1B1F2D]">my Dream Place</p>
+          <p className="text-lg text-[#1B1F2D] font-semibold">Dream Place</p>
         </div>
       </Link>
     </div>

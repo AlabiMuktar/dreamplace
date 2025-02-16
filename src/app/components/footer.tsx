@@ -16,7 +16,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-y-[6px]">
             <p className="text-[18px] font-semibold text-[#1B1F2D]">
-              my Dream Place
+              Dream Place
             </p>
             <p className="text-[#4F4F4F]">
               Your next goto companion for travel
