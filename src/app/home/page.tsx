@@ -9,7 +9,7 @@ import Footer from '../components/footer'
 
 const HomePage = () => {
   return (
-    <div className='relative px-[64px]'>
+    <div className='relative max-w-full px-[16px] md:px-[64px]'>
       <Navbar />
       <Hero />
       <Vacation />

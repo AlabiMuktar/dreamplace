@@ -3,18 +3,19 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { UseSelector } from "react-redux";
 import AuthNavbar from "../components/authNavbar";
 import google from "/public/image 4.svg";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useGoogleLogin } from "@react-oauth/google";
-import { userLogin } from "../libs/userAPI";
+import { userLogin } from "../services/userAPI";
 import axios from "axios";
 
 const signInSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
-  password: z.string().min(10),
+  password: z.string().min(8),
 });
 
 type FormValues = z.infer<typeof signInSchema>;
@@ -86,7 +87,7 @@ const SignIn = () => {
             <input
               {...register("email")}
               type="text"
-              className={`p-[12px] rounded-[4px] bg-[#F2F2F2] focus:outline-none ${
+              className={`p-[12px] rounded-[4px] bg-[#F2F2F2] outline-none focus-within:shadow-custom focus-within:border-[#2F80ED] ${
                 errors.email ? "border border-red-500" : ""
               }`}
             />
@@ -101,7 +102,7 @@ const SignIn = () => {
             <input
               {...register("password")}
               type="password"
-              className={`p-[12px] rounded-[4px] bg-[#F2F2F2] focus:outline-none ${
+              className={`p-[12px] rounded-[4px] bg-[#F2F2F2] outline-none focus-within:shadow-custom focus-within:border-[#2F80ED] ${
                 errors.password ? "border border-red-500" : ""
               }`}
             />

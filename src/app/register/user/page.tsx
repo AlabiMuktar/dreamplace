@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import AuthNavbar from "../../components/authNavbar";
-import { userRegistration } from "@/app/libs/userAPI";
+import { userRegistration } from "@/app/services/userAPI";
 import { useSelector } from "react-redux";
-import { loginSuccess } from "@/app/state/authSlice";
+import { loginSuccess } from "@/app/store/authSlice";
 import { UseDispatch } from "react-redux";
-import { AppDispatch } from "@/app/state/store";
-import { RootState } from "@/app/state/store";
+import { AppDispatch } from "@/app/store/store";
+import { RootState } from "@/app/store/store";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -46,13 +46,24 @@ const CreatePassword = () => {
   });
   const email = useSelector((state: RootState) => state.register.email);
 
-  const authState = useSelector((state: RootState)=> state.auth.isAuthenticated)
+  const authState = useSelector(
+    (state: RootState) => state.auth.isAuthenticated
+  );
 
   const router = useRouter();
 
   const handleUserRegistration = async (data: FormValues) => {
     setLoading(true);
     const userData: UserValues = { ...data, email };
+
+    if (data.password !== data.confirm_password) {
+      toast("password does not match", {
+        type: "warning",
+      });
+      setLoading(false)
+      return;
+    }
+
     try {
       const response = await userRegistration(userData);
       if (response?.data?.status === "success") {
@@ -66,7 +77,6 @@ const CreatePassword = () => {
           type: "warning",
         });
       }
-      console.log(response)
     } catch (error) {
       console.log(error);
     } finally {
@@ -78,7 +88,7 @@ const CreatePassword = () => {
     <div className="h-auto pb-[92px]">
       <AuthNavbar />
       <div className="flex flex-col justify-center sm:items-center max-sm: px-[20px] max-md:px-[24px]">
-        <h1 className="font-semibold">Create password</h1>
+        <h1 className="font-semibold text-center">Create Account</h1>
         <p className="text-sm text-center text-[#4F4F4F]">
           Use a minimum of 10 characters, including letters,
           <br /> lowercase letters, and numbers.
@@ -92,7 +102,7 @@ const CreatePassword = () => {
             <input
               {...register("name")}
               type="text"
-              className="p-[12px] rounded-[4px] bg-[#F2F2F2] focus:outline-none"
+              className="p-[12px] rounded-[4px] outline-none bg-[#F2F2F2]  focus-within:shadow-custom focus-within:border-[#2F80ED]"
             />
           </div>
           <div className="flex flex-col">
@@ -100,7 +110,7 @@ const CreatePassword = () => {
             <input
               {...register("password")}
               type="password"
-              className="p-[12px] rounded-[4px] bg-[#F2F2F2] focus:outline-none"
+              className="p-[12px] rounded-[4px] bg-[#F2F2F2] outline-none focus-within:shadow-custom focus-within:border-[#2F80ED]"
             />
           </div>
           <div className="flex flex-col">
@@ -108,7 +118,7 @@ const CreatePassword = () => {
             <input
               {...register("confirm_password")}
               type="password"
-              className="p-[12px] rounded-[4px] bg-[#F2F2F2] focus:outline-none"
+              className="p-[12px] rounded-[4px] bg-[#F2F2F2] outline-none  focus-within:shadow-custom focus-within:border-[#2F80ED]"
             />
           </div>
           <button

@@ -10,13 +10,13 @@ const Hotels = () => {
       <p className="text-[28px] font-semibold text-[#181818]">
         Popular hotels
       </p>
-      <div className="flex justify-between gap-x-[16px] gap-y-[6px]">
+      <div className="grid max-md:grid-cols-2 md:flex md:justify-between gap-x-[16px] gap-y-[10px]">
         {hotels.map((hotel) => (
           <div
             key={hotel.id}
             className="flex flex-col gap-y-[2px] cursor-pointer group"
           >
-            <div className="relative w-[295px] h-[220px] group-hover:scale-105 duration-500">
+            <div className="relative md:w-[295px] h-[220px] group-hover:scale-105 duration-500">
               <Image
                 className="absolute w-[100%] h-[100%]"
                 src={hotel.img}

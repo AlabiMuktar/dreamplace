@@ -17,13 +17,13 @@ const Vacation = () => {
           and inspiration from us
         </p>
       </div>
-      <div className="flex justify-between gap-x-[16px] gap-y-[6px]">
+      <div className="grid max-md:grid-cols-2 max-lg:grid-cols-3 lg:flex lg:justify-between flex-wrap gap-x-[16px] gap-y-[6px]">
         {locationData.map((location, idx) => (
           <div
             key={location.id}
             className="flex flex-col gap-y-[2px] cursor-pointer group"
           >
-            <div className="relative w-[295px] h-[220px] group-hover:scale-105 duration-500">
+            <div className="relative flex-wrap md:w-[295px] h-[220px] group-hover:scale-105 duration-500">
               <Image
                 className="absolute w-[100%] h-[100%]"
                 src={location.img}

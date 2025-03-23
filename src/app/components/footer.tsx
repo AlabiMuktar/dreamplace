@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="mt-[80px]">
       <div className="grid grid-cols-5">
-        <div className="flex gap-x-[4px] col-span-1">
+        <div className="flex items-start gap-x-[4px] col-span-1">
           <div className="">
             <Image
               src={dreamlogo}
@@ -15,7 +15,7 @@ const Footer = () => {
             />
           </div>
           <div className="flex flex-col gap-y-[6px]">
-            <p className="text-[18px] font-semibold text-[#1B1F2D]">
+            <p className="flex text-[18px] font-semibold text-[#1B1F2D]">
               Dream Place
             </p>
             <p className="text-[#4F4F4F]">
@@ -57,7 +57,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="col-span-1">
-        <p className="text-[18px] font-semibold text-[#1B1F2D]">Help</p>
+          <p className="text-[18px] font-semibold text-[#1B1F2D]">Help</p>
           <ul className="flex flex-col gap-y-[10px] text-[#4F4F4F] mt-[20px]">
             <li>Support</li>
             <li>Cancel your bookings</li>
@@ -68,8 +68,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="absolute flex items-center justify-center gap-x-[6px] left-0 right-0 h-[40px] bg-[#EBEBEB] mt-[60px] text-[#4F4F4F]">
-      <p className="">©</p>
-      <p>my Dream Place 2025</p>
+        <p className="">©</p>
+        <p>my Dream Place 2025</p>
       </div>
     </div>
   );

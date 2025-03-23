@@ -2,18 +2,17 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../state/store";
+import { AppDispatch } from "../store/store";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { toast } from "react-toastify";
-import { setEmail } from "../state/registerSlice";
+import { setEmail } from "../store/registerSlice";
 import AuthNavbar from "../components/authNavbar";
 import google from "/public/image 4.svg";
-import { userEmailVerification } from "@/app/libs/userAPI";
+import { userEmailVerification } from "@/app/services/userAPI";
 import { Loader2 } from "lucide-react";
 
 const formSchema = z.object({
@@ -77,16 +76,16 @@ const Register = () => {
 
   const handleuserEmailVerification = async (data: FormValues) => {
     setLoading(true)
+    console.log(data)
     try {
       const response = await userEmailVerification(data);
       if (response?.status === 200) {
         dispatch(setEmail(data.email));
-        console.log(response);
         setLoading(false);
         toast(response.data.message, {
           type: "success",
         });
-        router.push("/register/password");
+        router.push("/register/user");
       } else {
         setLoading(false);
         toast("email already registered", {
@@ -108,12 +107,12 @@ const Register = () => {
           onSubmit={handleSubmit(handleuserEmailVerification)}
           className="w-full sm:max-w-[400px] flex flex-col gap-y-[20px] mt-[40px]"
         >
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-y-2">
             <label className="text-sm text-[#181818]">Email address</label>
             <input
               {...register("email")}
               type="text"
-              className={`py-[8px] px-[12px] rounded-[4px] bg-[#F2F2F2] focus:outline-none ${
+              className={`py-[8px] px-[12px] rounded-[4px] bg-[#F2F2F2] outline-none focus-within:shadow-custom focus-within:border-[#2F80ED] ${
                 errors.email ? "border border-red-500" : ""
               }`}
             />

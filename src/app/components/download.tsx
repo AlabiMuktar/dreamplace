@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Download = () => {
   return (
-    <div>
+    <div className="relative">
       <div className="relative mt-[60px] h-[280px]">
         <Image
           src={"/Rectangle 18.png"}
@@ -23,13 +23,13 @@ const Download = () => {
               Download mobile app
             </button>
           </div>
-          <Image
+          {/* <Image
             src={"/Isolated_right_hand_with_smartphone 1.png"}
             className=""
             width={828}
             height={684}
             alt="smartphone"
-          />
+          /> */}
         </div>
       </div>
       <div className="flex flex-col items-center gap-y-[16px] mt-[80px]">

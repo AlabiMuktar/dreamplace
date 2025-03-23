@@ -1,3 +1,5 @@
+"use client"
+
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface authState {
@@ -19,7 +21,7 @@ const authSlice = createSlice({
     initialState,
     reducers: {
       loginSuccess: (state, action:PayloadAction) => {
-        state.isAuthenticated = true;
+        state.isAuthenticated = false;
         state.user = action.payload;
         state.loading = false;
         state.error = null;

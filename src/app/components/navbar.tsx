@@ -4,6 +4,8 @@ import dreamlogo from "/public/bxs-plane-alt 1.svg";
 import profilePicture from "/public/Ellipse 2.png";
 import Image from "next/image";
 import Link from "next/link";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { IoMenu } from "react-icons/io5";
 import { FaBell } from "react-icons/fa6";
 import { TbUserSquareRounded, TbLogout } from "react-icons/tb";
 import { MdOutlineFlightTakeoff } from "react-icons/md";
@@ -31,7 +33,7 @@ const Navbar = () => {
             <p className="text-lg text-[#1B1F2D] font-semibold">Dream Place</p>
           </div>
         </Link>
-        <ul className="flex items-center gap-x-6 text-[#333333]">
+        <ul className="hidden md:flex items-center gap-x-6 text-[#333333]">
           <li className="cursor-pointer">Home</li>
           <li className="cursor-pointer">Discover</li>
           <li className="cursor-pointer">Activities</li>
@@ -39,17 +41,18 @@ const Navbar = () => {
           <li className="cursor-pointer">Contact</li>
           <li className="cursor-pointer">List your property</li>
         </ul>
-        <div className="flex space-x-4">
+        <div className="flex items-center space-x-4">
           <Link href={"/register"}>
-            <button className="px-[18px] py-[10px] text-[#2F80ED] border border-[#2F80ED] rounded-[6px]">
+            <button className="px-[14px] py-[8px] md:px-[18px] md:py-[10px] text-[#2F80ED] border border-[#2F80ED] rounded-[6px]">
               Register
             </button>
           </Link>
           <Link href={"/signin"}>
-            <button className="px-[18px] py-[10px] text-[#FFFFFF] bg-[#2F80ED] rounded-[6px]">
+            <button className="px-[14px] py-[8px] md:px-[18px] md:py-[10px] text-[#FFFFFF] bg-[#2F80ED] rounded-[6px]">
               Sign In
             </button>
           </Link>
+          <IoMenu className="text-xl flex md:hidden" />
           {/* <div className="flex items-center gap-x-[22px]">
             <FaBell className="text-[24px]" />
 
